@@ -8,5 +8,5 @@
      state: present
   - name: start webserver
     service:
-     name: httpd
+     name: "{{webpack}}"
      state: started
