@@ -1,0 +1,8 @@
+---
+- hosts: webserver
+  become: yes
+  tasks: 
+  - name: install java on node side
+    dnf:
+     name: "{{javapackonredhat}}"
+     state: present
