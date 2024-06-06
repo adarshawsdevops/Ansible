@@ -4,11 +4,21 @@
   tasks: 
   - name: install webserver on redhat node side
     dnf:
-     name: "{{webpack}}"
+     name: "{{webpackonredhat}}"
      state: present
-     when: 
+    when: ansible_os_family=="RedHat"
   - name: start webserver on redhat node side
     service:
-     name: "{{webpack}}"
+     name: "{{webpackonredhat}}"
      state: started
-     when: 
+    when: ansible_os_family=="RedHat"
+  - name: install webserver on Debian node side
+    apt:
+     name: "{{webpackondebian}}"
+     state: present
+    when: ansible_os_family=="Debian"
+  - name: start webserver on Debian node side
+    service:
+     name: "{{webpackondebian}}"
+     state: started
+    when: ansible_os_family=="Debian" 
