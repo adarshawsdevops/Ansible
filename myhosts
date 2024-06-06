@@ -1,4 +1,4 @@
 172.31.43.13
 
 [webserver:vars]
-mywebpack=httpd
+webpack=httpd

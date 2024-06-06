@@ -1,12 +1,12 @@
 ---
-- hosts: all
+- hosts: webserver
   become: yes
   tasks: 
   - name: install webserver on node side
     dnf:
-     name: httpd
+     name: "{{webpack}}"
      state: present
   - name: start webserver
     service:
-     name: "{{mywebpack}}"
+     name: "{{webpack}}"
      state: started
