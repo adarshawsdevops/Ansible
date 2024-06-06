@@ -6,3 +6,7 @@
     dnf:
      name: git
      state: present
+  - name: install wget
+    dnf:
+     name: wget
+     state: present
